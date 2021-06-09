@@ -2,17 +2,19 @@
 <!--Show the tittle and body of the article selected-->
 <p><%= @article.body %></p>
 
-<ul>
-<li><%= link_to "Edit", edit_article_path(@article) %></li>
-<li><%= link_to "Destroy", article_path(@article),
+    <ul>
+        <li><%= link_to "Edit", edit_article_path(@article) %></li>
+        <li><%= link_to "Destroy", article_path(@article),
         method: :delete,
         data: { confirm: "Are you sure?"} %></li>
-<li><%= link_to "Volver al index", "/articles" %></li>
-</ul>
+        <li><%= link_to "Back to index", "/articles" %></li>
+    </ul>
+
+
+<h2> Comments: </h2>
+<%= render @article.comments %>
+
+
+
 <h2> Add a new comment: </h2>
-<%= form_with model: [@article, @article.comments.build ] do |form| %>
-<p>
-
-<%= form.label :commenter %>
-
-</p>
+  <%= render 'comments/form'%>
