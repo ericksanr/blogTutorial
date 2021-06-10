@@ -4,7 +4,7 @@
 
     <ul>
         <li><%= link_to "Edit", edit_article_path(@article) %></li>
-        <li><%= link_to "Destroy", article_path(@article),
+        <li><%= link_to "Delete", article_path(@article),
         method: :delete,
         data: { confirm: "Are you sure?"} %></li>
         <li><%= link_to "Back to index", "/articles" %></li>
@@ -17,4 +17,5 @@
 
 
 <h2> Add a new comment: </h2>
-  <%= render 'comments/form'%>
+  <%= render 'comments/form' %>
+  
